@@ -1,0 +1,36 @@
+<view wx:if="{{entry}}" class="entry-view">
+  <view class="card ev-head">
+    <view class="ev-sec">第 {{secNum}} 节 · {{secTitle}} · 第 {{entry.num}} 条</view>
+    <view class="ev-title">{{entry.title}}</view>
+    <view class="ev-chips">
+      <text class="chip chip-ev-{{entry.evidence}}">证据 {{entry.evidence}}</text>
+      <text wx:for="{{tagList}}" wx:key="*this" class="chip chip-plain">{{item}}</text>
+      <text wx:if="{{entry.disputed}}" class="chip chip-warn">争议</text>
+      <text wx:if="{{entry.todo}}" class="chip chip-warn">待核实</text>
+    </view>
+    <view wx:if="{{costBits.length}}" class="ev-costs">
+      <text wx:for="{{costBits}}" wx:key="*this" class="chip chip-cost">{{item}}</text>
+    </view>
+  </view>
+
+  <view
+    wx:for="{{fields}}"
+    wx:key="key"
+    class="card ev-field ev-field-{{item.key}}"
+  >
+    <view class="ev-label">{{item.label}}</view>
+    <view class="ev-text">
+      <block wx:for="{{item.segs}}" wx:key="index" wx:for-item="seg">
+        <text wx:if="{{seg.t === 'text'}}">{{seg.v}}</text>
+        <text wx:else class="ref" data-sec="{{seg.sec}}" data-entry="{{seg.entry}}" bindtap="onRefTap">{{seg.v}}</text>
+      </block>
+    </view>
+    <view wx:if="{{item.key === 'source'}}" class="ev-copy" bindtap="copySource">复制来源</view>
+  </view>
+
+  <view class="ev-actions">
+    <button class="btn-fav {{fav ? 'btn-fav-on' : ''}}" bindtap="toggleFav">
+      {{fav ? "已收藏 · 点击取消" : "收藏这条"}}
+    </button>
+  </view>
+</view>

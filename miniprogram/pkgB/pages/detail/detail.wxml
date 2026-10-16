@@ -1,0 +1,1 @@
+<entry-view entry="{{entry}}" sec-num="{{secNum}}" sec-title="{{secTitle}}" pkg="{{pkg}}" />

@@ -1,0 +1,46 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 8rpx 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(20, 30, 50, 0.05);
+}
+
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+  padding: 14rpx 0;
+}
+
+.search-clear {
+  flex: none;
+  font-size: 25rpx;
+  color: #3a5ccc;
+  margin-left: 16rpx;
+}
+
+.res-item {
+  padding: 24rpx 28rpx;
+}
+
+.res-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.res-meta {
+  margin-top: 12rpx;
+}
+
+.res-meta .chip {
+  margin-bottom: 0;
+}
+
+.res-sec {
+  margin-top: 12rpx;
+  font-size: 23rpx;
+  color: #9aa4ae;
+}

@@ -1,0 +1,20 @@
+<view class="page-pad">
+  <view wx:if="{{!list.length}}" class="empty">还没有收藏。在条目页面点「收藏这条」就会出现在这里。</view>
+
+  <view
+    wx:for="{{list}}"
+    wx:key="entry"
+    class="card fav-item"
+    data-sec="{{item.sec}}"
+    data-entry="{{item.entry}}"
+    bindtap="onTap"
+  >
+    <view class="fav-title">{{item.title}}</view>
+    <view class="fav-plain">{{item.plain}}</view>
+    <view class="fav-meta">
+      <text class="chip chip-ev-{{item.evidence}}">证据 {{item.evidence}}</text>
+      <text class="chip chip-plain">第 {{item.sec}} 节 · {{item.secTitle}} · 第 {{item.entry}} 条</text>
+    </view>
+    <view class="fav-remove" data-sec="{{item.sec}}" data-entry="{{item.entry}}" catchtap="onRemove">移除</view>
+  </view>
+</view>

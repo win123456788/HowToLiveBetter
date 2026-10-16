@@ -1,0 +1,33 @@
+<view class="page-pad">
+  <view class="search-bar">
+    <input
+      class="search-input"
+      value="{{q}}"
+      placeholder="搜建议标题或章节名，空格分隔多个词"
+      confirm-type="search"
+      bindinput="onInput"
+    />
+    <view wx:if="{{q}}" class="search-clear" bindtap="onClear">清空</view>
+  </view>
+
+  <view wx:if="{{searched && !results.length}}" class="empty">没有找到相关条目</view>
+
+  <view
+    wx:for="{{results}}"
+    wx:key="entry"
+    class="card res-item"
+    data-sec="{{item.sec}}"
+    data-entry="{{item.entry}}"
+    bindtap="onTap"
+  >
+    <view class="res-title">{{item.title}}</view>
+    <view class="res-meta">
+      <text class="chip chip-ev-{{item.evidence}}">证据 {{item.evidence}}</text>
+      <text wx:if="{{item.benefit}}" class="chip chip-plain">收益 {{item.benefit}}</text>
+      <text wx:if="{{item.scope}}" class="chip chip-plain">{{item.scope}}</text>
+    </view>
+    <view class="res-sec">第 {{item.sec}} 节 · {{item.secTitle}}</view>
+  </view>
+
+  <view wx:if="{{!searched}}" class="empty">输入关键词开始搜索，例如「安全带」「失眠」「裁员」</view>
+</view>

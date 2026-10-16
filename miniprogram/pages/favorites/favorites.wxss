@@ -1,0 +1,39 @@
+.fav-item {
+  position: relative;
+  padding-bottom: 22rpx;
+}
+
+.fav-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-right: 90rpx;
+}
+
+.fav-plain {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #6d7885;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.fav-meta {
+  margin-top: 14rpx;
+}
+
+.fav-meta .chip {
+  margin-bottom: 0;
+}
+
+.fav-remove {
+  position: absolute;
+  top: 24rpx;
+  right: 28rpx;
+  font-size: 24rpx;
+  color: #b3403a;
+  padding: 6rpx 10rpx;
+}

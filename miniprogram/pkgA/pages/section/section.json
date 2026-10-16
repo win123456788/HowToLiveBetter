@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "章节",
+  "usingComponents": {
+    "section-view": "/components/section-view/section-view"
+  }
+}

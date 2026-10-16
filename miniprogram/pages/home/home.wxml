@@ -1,0 +1,36 @@
+<view class="page-pad">
+  <view class="hero">
+    <view class="hero-title">高性价比人生指南</view>
+    <view class="hero-sub">{{total}} 条循证建议 · 每条写明成本、收益与证据等级</view>
+  </view>
+
+  <view class="card quick">
+    <view class="quick-row">
+      <view class="quick-btn" bindtap="goSearch">搜索条目</view>
+      <view class="quick-btn" bindtap="onRandomTap">随便看一条</view>
+    </view>
+    <view class="quick-row">
+      <view class="quick-btn" bindtap="goFavorites">我的收藏 · {{favCount}}</view>
+      <view class="quick-btn" bindtap="goAbout">关于本项目</view>
+    </view>
+  </view>
+
+  <view class="list-head">共 {{sections.length}} 节</view>
+
+  <view
+    wx:for="{{sections}}"
+    wx:key="num"
+    class="card sec-item"
+    data-num="{{item.num}}"
+    bindtap="onSectionTap"
+  >
+    <view class="sec-item-num">{{item.num}}</view>
+    <view class="sec-item-main">
+      <view class="sec-item-title">{{item.title}}</view>
+      <view class="sec-item-meta">{{item.count}} 条 · A {{item.evidence.A}} / B {{item.evidence.B}} / C {{item.evidence.C}}</view>
+    </view>
+    <view class="sec-item-arrow">›</view>
+  </view>
+
+  <view class="foot">内容同步自开源书《高性价比人生指南》（CC BY 4.0）· {{generatedAt}}</view>
+</view>

@@ -1,0 +1,30 @@
+<view class="page-pad">
+  <view class="card">
+    <view class="about-h1">关于本站</view>
+    <view class="about-p">这是一个非官方的阅读小程序，把开源书《高性价比人生指南》的 {{total}} 条建议装进手机，方便随时查阅、搜索和收藏。</view>
+    <view class="about-p">全书每条建议写明花掉什么、换回什么、证据等级多高，来源只引期刊论文和官方文件。原书由 eternity4719 创作并维护，以 CC BY 4.0 协议开源。</view>
+  </view>
+
+  <view class="card">
+    <view class="about-h2">署名与许可</view>
+    <view class="about-p">内容来源：《高性价比人生指南》，仓库地址见下方按钮。</view>
+    <view class="about-p">许可协议：CC BY 4.0（署名即可自由使用、修改、再分发）。</view>
+    <view class="about-p">本小程序为独立第三方项目，与原作者无隶属关系；内容可能滞后于原书，以原仓库中文原文为准。</view>
+    <view class="about-btns">
+      <view class="about-btn" bindtap="copyUpstream">复制原仓库地址</view>
+      <view class="about-btn" bindtap="copyLicense">复制许可证地址</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="about-h2">免责声明</view>
+    <view class="about-p">书中的医学、法律、政策内容按中国大陆现行规定编写，各地执行有差异，仅供参考。真去办事、看病、打官司时，以当地部门、医生和律师的说法为准。</view>
+    <view class="about-p">本项目从未发行、也不会发行任何代币或数字资产。</view>
+  </view>
+
+  <view class="card">
+    <view class="about-h2">版本</view>
+    <view class="about-p">内容同步日期：{{generatedAt}}（随上游更新自动同步）。</view>
+    <view class="about-p">条目数：{{total}} 条。</view>
+  </view>
+</view>

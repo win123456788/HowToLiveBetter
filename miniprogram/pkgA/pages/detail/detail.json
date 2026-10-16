@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "条目",
+  "usingComponents": {
+    "entry-view": "/components/entry-view/entry-view"
+  }
+}

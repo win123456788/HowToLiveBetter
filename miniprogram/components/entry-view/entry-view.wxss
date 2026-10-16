@@ -1,0 +1,86 @@
+.ev-head {
+  background: linear-gradient(135deg, #ffffff 0%, #f2f5ff 100%);
+}
+
+.ev-sec {
+  font-size: 24rpx;
+  color: #7d8894;
+  margin-bottom: 8rpx;
+}
+
+.ev-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ev-chips {
+  margin-top: 16rpx;
+}
+
+.ev-costs {
+  margin-top: 4rpx;
+  padding-top: 14rpx;
+  border-top: 1rpx solid #f0f1f3;
+}
+
+.ev-field {
+  padding-bottom: 20rpx;
+}
+
+.ev-label {
+  font-size: 24rpx;
+  color: #7d8894;
+  margin-bottom: 8rpx;
+}
+
+.ev-text {
+  font-size: 28rpx;
+  line-height: 1.75;
+  color: #2c333b;
+}
+
+.ev-field-plain {
+  background: #f4f7ff;
+  border-left: 6rpx solid #3a5ccc;
+}
+
+.ev-field-plain .ev-text {
+  color: #23335f;
+}
+
+.ev-field-source .ev-text {
+  font-size: 24rpx;
+  color: #62707e;
+  word-break: break-all;
+}
+
+.ev-field-note .ev-text {
+  color: #4d5560;
+}
+
+.ev-copy {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: #3a5ccc;
+  text-align: right;
+}
+
+.ev-actions {
+  margin-top: 28rpx;
+}
+
+.btn-fav {
+  background: #ffffff;
+  color: #3a5ccc;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+  line-height: 2.6;
+  border: 1rpx solid #cdd8f5;
+}
+
+.btn-fav-on {
+  background: #eef1fb;
+  color: #8a94a0;
+  border-color: #e2e6ee;
+}

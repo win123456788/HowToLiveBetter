@@ -1,0 +1,1 @@
+<section-view section="{{section}}" detail-base="{{detailBase}}" />

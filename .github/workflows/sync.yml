@@ -1,0 +1,50 @@
+name: 同步上游内容
+
+on:
+  schedule:
+    # 每天 UTC 22:00（北京时间次日 06:00）
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 拉取上游正文
+        run: |
+          git clone --depth 1 https://github.com/eternity4719/HowToLiveBetter.git /tmp/upstream
+          rm -rf content/HowToLiveBetter
+          mkdir -p content/HowToLiveBetter
+          cp -r /tmp/upstream/book content/HowToLiveBetter/book
+          cp /tmp/upstream/README.md content/HowToLiveBetter/README.md
+          cp /tmp/upstream/LICENSE content/HowToLiveBetter/LICENSE
+          if [ -f /tmp/upstream/updates.json ]; then
+            cp /tmp/upstream/updates.json content/HowToLiveBetter/updates.json
+          fi
+          git -C /tmp/upstream rev-parse HEAD > content/HowToLiveBetter/COMMIT.txt
+
+      - name: 重新生成小程序数据
+        run: python scripts/build_data.py
+
+      - name: 提交变更
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "内容没有变化，跳过提交"
+          else
+            git commit -m "chore: 同步上游内容（$(date -u +%F)）"
+            git push
+          fi

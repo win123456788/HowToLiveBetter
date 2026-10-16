@@ -1,0 +1,2 @@
+// 自动生成：章节编号 -> 数据模块
+module.exports = {1:require('./01.js'),2:require('./02.js'),3:require('./03.js'),4:require('./04.js'),5:require('./05.js'),6:require('./06.js'),7:require('./07.js'),8:require('./08.js'),9:require('./09.js'),10:require('./10.js'),11:require('./11.js'),12:require('./12.js'),13:require('./13.js'),14:require('./14.js'),15:require('./15.js'),16:require('./16.js'),17:require('./17.js'),18:require('./18.js')};

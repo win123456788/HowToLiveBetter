@@ -1,0 +1,61 @@
+<view wx:if="{{section}}" class="section-view">
+  <view class="card sec-head">
+    <view class="sec-kicker">第 {{section.num}} 节</view>
+    <view class="sec-title">{{section.title}}</view>
+    <view class="sec-stats">{{section.entries.length}} 条 · 证据 A {{counts.A}} / B {{counts.B}} / C {{counts.C}}</view>
+  </view>
+
+  <view wx:if="{{introSegs.length}}" class="card sec-intro">
+    <block wx:for="{{introSegs}}" wx:key="index" wx:for-item="para">
+      <view wx:if="{{showAllIntro || index < 3}}" class="intro-para">
+        <block wx:for="{{para.segs}}" wx:key="index" wx:for-item="seg">
+          <text wx:if="{{seg.t === 'text'}}">{{seg.v}}</text>
+          <text wx:else class="ref" data-sec="{{seg.sec}}" data-entry="{{seg.entry}}" bindtap="onRefTap">{{seg.v}}</text>
+        </block>
+      </view>
+    </block>
+    <view wx:if="{{introSegs.length > 3}}" class="intro-toggle" bindtap="toggleIntro">
+      {{showAllIntro ? "收起" : "展开全部"}}
+    </view>
+  </view>
+
+  <view class="card filters">
+    <view class="filter-row">
+      <text class="filter-label">证据</text>
+      <text class="chip {{filterEv === '' ? 'chip-on' : ''}}" data-v="" bindtap="setEv">全部</text>
+      <text class="chip {{filterEv === 'A' ? 'chip-on' : ''}}" data-v="A" bindtap="setEv">A</text>
+      <text class="chip {{filterEv === 'B' ? 'chip-on' : ''}}" data-v="B" bindtap="setEv">B</text>
+      <text class="chip {{filterEv === 'C' ? 'chip-on' : ''}}" data-v="C" bindtap="setEv">C</text>
+    </view>
+    <view class="filter-row">
+      <text class="filter-label">收益</text>
+      <text class="chip {{filterBenefit === '' ? 'chip-on' : ''}}" data-v="" bindtap="setBenefit">全部</text>
+      <text class="chip {{filterBenefit === '大' ? 'chip-on' : ''}}" data-v="大" bindtap="setBenefit">大</text>
+      <text class="chip {{filterBenefit === '中' ? 'chip-on' : ''}}" data-v="中" bindtap="setBenefit">中</text>
+      <text class="chip {{filterBenefit === '小' ? 'chip-on' : ''}}" data-v="小" bindtap="setBenefit">小</text>
+    </view>
+  </view>
+
+  <view class="entry-list">
+    <view
+      wx:for="{{list}}"
+      wx:key="num"
+      class="card entry-item"
+      data-entry="{{item.num}}"
+      bindtap="onEntryTap"
+    >
+      <view class="entry-title-row">
+        <text class="entry-num">{{item.num}}</text>
+        <text class="entry-title">{{item.title}}</text>
+      </view>
+      <view wx:if="{{item.snippet}}" class="entry-snippet">{{item.snippet}}</view>
+      <view class="entry-chips">
+        <text class="chip chip-ev-{{item.evidence}}">证据 {{item.evidence}}</text>
+        <text wx:if="{{item.benefit}}" class="chip chip-benefit-{{item.benefitKey}}">收益 {{item.benefit}}</text>
+        <text wx:if="{{item.scope}}" class="chip chip-plain">{{item.scope}}</text>
+        <text wx:if="{{item.disputed}}" class="chip chip-warn">争议</text>
+      </view>
+    </view>
+    <view wx:if="{{!list.length}}" class="empty">没有符合筛选条件的条目</view>
+  </view>
+</view>

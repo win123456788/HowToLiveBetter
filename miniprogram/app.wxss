@@ -1,0 +1,101 @@
+/* 全局样式：纸张底色 + 卡片式排版 */
+
+page {
+  background: #f6f5f1;
+  color: #24292f;
+  font-size: 28rpx;
+  line-height: 1.7;
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+.page-pad {
+  padding: 24rpx 24rpx 80rpx;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16rpx;
+  padding: 26rpx 28rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(20, 30, 50, 0.05);
+}
+
+/* 通用小标签 */
+.chip {
+  display: inline-block;
+  font-size: 22rpx;
+  line-height: 1;
+  padding: 9rpx 16rpx;
+  border-radius: 999rpx;
+  margin: 0 10rpx 10rpx 0;
+  color: #5c6b7a;
+  background: #eef0f2;
+}
+
+.chip-on {
+  background: #3a5ccc;
+  color: #ffffff;
+}
+
+.chip-plain {
+  background: #eef0f2;
+  color: #5c6b7a;
+}
+
+.chip-cost {
+  background: #f3f0ea;
+  color: #6b6252;
+}
+
+.chip-warn {
+  background: #fdeeee;
+  color: #b3403a;
+}
+
+.chip-ev-A {
+  background: #e6f4ea;
+  color: #1e7f43;
+}
+
+.chip-ev-B {
+  background: #fdf3e2;
+  color: #9a6a00;
+}
+
+.chip-ev-C {
+  background: #eef0f2;
+  color: #5c6b7a;
+}
+
+.chip-benefit-big {
+  background: #eaf0ff;
+  color: #3a5ccc;
+}
+
+.chip-benefit-mid {
+  background: #f0f0fa;
+  color: #6668a8;
+}
+
+.chip-benefit-small {
+  background: #f2f3f5;
+  color: #8a94a0;
+}
+
+/* 正文里的「见第 X 节第 Y 条」 */
+.ref {
+  color: #3a5ccc;
+  border-bottom: 1rpx dashed #9db1e8;
+  padding-bottom: 2rpx;
+}
+
+.empty {
+  text-align: center;
+  color: #9aa4ae;
+  font-size: 26rpx;
+  padding: 80rpx 0;
+}
+
+button::after {
+  border: none;
+}

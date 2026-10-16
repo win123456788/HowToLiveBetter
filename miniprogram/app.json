@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    "pages/favorites/favorites",
+    "pages/about/about"
+  ],
+  "subPackages": [
+    {
+      "root": "pkgA",
+      "pages": [
+        "pages/section/section",
+        "pages/detail/detail"
+      ]
+    },
+    {
+      "root": "pkgB",
+      "pages": [
+        "pages/section/section",
+        "pages/detail/detail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/home/home": {
+      "network": "all",
+      "packages": [
+        "pkgA",
+        "pkgB"
+      ]
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#f6f5f1",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "高性价比人生指南",
+    "backgroundColor": "#f6f5f1",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents",
+  "sitemapLocation": "sitemap.json"
+}
